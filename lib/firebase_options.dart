@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyALnFaVRLv_C59WQ9jCL_S7Kj4g0CpNPew',
-    appId: '1:455253953015:android:812c91b5c21fa816a886f2',
-    messagingSenderId: '455253953015',
-    projectId: 'example-nusaputra',
-    storageBucket: 'example-nusaputra.appspot.com',
+    apiKey: 'AIzaSyCQRRVFKB8dgP1yjIB-62b6PvrrAKJ2iTw',
+    appId: '1:519429655316:android:110f4c0613868f8ae51001',
+    messagingSenderId: '519429655316',
+    projectId: 'asepuasmobile',
+    storageBucket: 'asepuasmobile.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDQhIYMtp7BOuyWqGtUlIs8O0Uzsom4EiU',
-    appId: '1:455253953015:ios:606ed35c606f7d54a886f2',
-    messagingSenderId: '455253953015',
-    projectId: 'example-nusaputra',
-    storageBucket: 'example-nusaputra.appspot.com',
+    apiKey: 'AIzaSyC1NVzB91N12V2mkqcLeZPfD7TK92FqzBk',
+    appId: '1:519429655316:ios:8e94e4660afe9ea9e51001',
+    messagingSenderId: '519429655316',
+    projectId: 'asepuasmobile',
+    storageBucket: 'asepuasmobile.appspot.com',
     iosBundleId: 'com.example.firebaseDatabase',
   );
 }

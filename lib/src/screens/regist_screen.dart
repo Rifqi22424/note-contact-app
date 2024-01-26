@@ -54,52 +54,60 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Note Contact App'),
+        backgroundColor: Colors.green,
+        title: Text('Aplikasi Kasir Warteg'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Regist',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                _signUp();
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(
-                    double.infinity, 40), // Sesuaikan lebar yang diinginkan
+      //Jang scroll meh alus
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset('assets/wartegLogo.png', height: 250),
+              Text(
+                'Registrasi',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
-              child: Text('Submit'),
-            ),
-            Text(
-              'Or',
-              style: TextStyle(fontSize: 10),
-            ),
-            ElevatedButton(
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(labelText: 'Email'),
+              ),
+              TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton(
                 onPressed: () {
-                  _login();
+                  _signUp();
                 },
                 style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
                   minimumSize: Size(
                       double.infinity, 40), // Sesuaikan lebar yang diinginkan
                 ),
-                child: Text('Login'))
-          ],
+                child: Text('Submit'),
+              ),
+              Text(
+                'Or',
+                style: TextStyle(fontSize: 10),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    _login();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    minimumSize: Size(
+                        double.infinity, 40), // Sesuaikan lebar yang diinginkan
+                  ),
+                  child: Text('Login'))
+            ],
+          ),
         ),
       ),
     );

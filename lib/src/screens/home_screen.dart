@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   late TextEditingController _noController = TextEditingController();
   late CollectionReference<Map<String, dynamic>> _users;
 
+  @override
   void initState() {
     super.initState();
 
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
           'name': _nameController.text,
           'age': int.parse(_ageController.text),
           'no': int.parse(_noController.text),
-          'timestamp': FieldValue.serverTimestamp(), // Add timestamp field
+          'timestamp': FieldValue.serverTimestamp(),
         })
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
@@ -65,11 +66,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Note Contact App'),
-      ),
       body: Column(
         children: [
+          SizedBox(
+            height: 60,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
@@ -98,13 +99,11 @@ class _HomePageState extends State<HomePage> {
             child: Text('Add User'),
           ),
           StreamBuilder(
-            stream: _users
-                .orderBy('timestamp', descending: true)
-                .snapshots(), // Order by timestamp in descending order
+            stream: _users.orderBy('timestamp', descending: true).snapshots(),
             builder: (context,
                 AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
               if (!snapshot.hasData) {
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               }
 
               return Expanded(

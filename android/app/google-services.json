@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "455253953015",
-    "project_id": "example-nusaputra",
-    "storage_bucket": "example-nusaputra.appspot.com"
+    "project_number": "519429655316",
+    "project_id": "asepuasmobile",
+    "storage_bucket": "asepuasmobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:455253953015:android:812c91b5c21fa816a886f2",
+        "mobilesdk_app_id": "1:519429655316:android:110f4c0613868f8ae51001",
         "android_client_info": {
           "package_name": "com.example.firebase_database"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyALnFaVRLv_C59WQ9jCL_S7Kj4g0CpNPew"
+          "current_key": "AIzaSyCQRRVFKB8dgP1yjIB-62b6PvrrAKJ2iTw"
         }
       ],
       "services": {

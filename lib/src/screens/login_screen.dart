@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/src/screens/daftar_menu_screen.dart';
 import 'package:firebase_database/src/screens/home_screen.dart';
 import 'package:firebase_database/src/screens/regist_screen.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
       // Navigasi ke HomePage setelah login berhasil
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => HomePage(uid: uid),
+          builder: (context) => DaftarMenuScreen(uid: uid),
         ),
       );
     } catch (e) {
@@ -61,54 +62,62 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Note Contact App'),
+        backgroundColor: Colors.green,
+        title: Text('Aplikasi Kasir Warteg'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Login',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                _signIn();
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(
-                    double.infinity, 40), // Sesuaikan lebar yang diinginkan
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset('assets/wartegLogo.png', height: 250),
+              Text(
+                'Login',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
-              child: Text('Submit'),
-            ),
-            Text(
-              'Or',
-              style: TextStyle(fontSize: 10),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                _regist();
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(
-                    double.infinity, 40), // Sesuaikan lebar yang diinginkan
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(labelText: 'Email'),
               ),
-              child: Text('Regist'),
-            ),
-          ],
+              TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  _signIn();
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                  minimumSize: Size(
+                      double.infinity, 40), // Sesuaikan lebar yang diinginkan
+                ),
+                child: Text('Submit'),
+              ),
+              Text(
+                'Or',
+                style: TextStyle(fontSize: 10),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _regist();
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                  minimumSize: Size(
+                      double.infinity, 40), // Sesuaikan lebar yang diinginkan
+                ),
+                child: Text('Registrasi'),
+              ),
+            ],
+          ),
         ),
       ),
     );
